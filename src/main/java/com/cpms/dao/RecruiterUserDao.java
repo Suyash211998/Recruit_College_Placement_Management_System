@@ -1,0 +1,15 @@
+package com.cpms.dao;
+
+
+
+import com.cpms.model.RecruiterUser;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface RecruiterUserDao extends JpaRepository<RecruiterUser, Integer> {
+    public RecruiterUser findByUsername(@Param(value = "username") String username);
+}
